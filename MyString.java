@@ -116,18 +116,16 @@ public class MyString {
         return new MyString(ret);
     }
 
-    public MyString mutateToUppercaseMyString () {
+    public void mutateToUppercaseMyString () {
         for (int i = 0; i < chars.length; i++) {
             chars[i] = Character.toUpperCase(chars[i]);
         }
-        return new MyString(chars);
     }
 
-    public MyString mutateToLowercaseMyString () {
+    public void mutateToLowercaseMyString () {
         for (int i = 0; i < chars.length; i++) {
             chars[i] = Character.toLowerCase(chars[i]);
         }
-        return new MyString(chars);
     }
 
     public char [] accessToUppercaseChars () {
@@ -146,21 +144,47 @@ public class MyString {
         return ret;
     }
 
-    public char [] mutateToUppercaseChars () {
+    public void mutateToUppercaseChars () {
         for (int i = 0; i < chars.length; i++) {
             chars[i] = Character.toUpperCase(chars[i]);
         }
-        return chars;
     }
 
-    public char [] mutateToLowercaseChars () {
+    public void mutateToLowercaseChars () {
         for (int i = 0; i < chars.length; i++) {
             chars[i] = Character.toLowerCase(chars[i]);
         }
-        return chars;
     }
 
     public String toString () {
         return new String (chars);
+    }
+    
+    public boolean equals (MyString m) {
+    	// Return false if MyStrings are not same length
+    	if (this.length() != m.length()) return false;
+    	
+    	// Otherwise, test char arrays for equality
+    	char [] thisChars = this.toCharArray();
+    	char [] mChars = m.toCharArray();
+    	for (int i = 0; i < this.length(); i++) {
+    		if (thisChars[i] != mChars[i]) return false;
+    	}
+    	
+    	return true;
+    }
+    
+    public boolean equalsIgnoreCase (MyString m) {
+    	// Return false if MyStrings are not same length
+    	if (this.length() != m.length()) return false;
+    	
+    	// Otherwise, test char arrays for equality
+    	char [] thisChars = this.toCharArray();
+    	char [] mChars = m.toCharArray();
+    	for (int i = 0; i < this.length(); i++) {
+    		if (Character.toLowerCase(thisChars[i]) != Character.toLowerCase(mChars[i])) return false;
+    	}
+    	
+    	return true;
     }
 }

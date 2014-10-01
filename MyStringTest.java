@@ -61,12 +61,11 @@ public class MyStringTest {
         assertNotEquals(true, m.containsCharIgnoreCase('F'));
     }
 
-    //fails
     @Test
     public void testCopy() {
     	MyString m = new MyString(new char [] {'a', 'b', 'c', 'd', 'e'});
 		MyString newMyString = m.copy();
-		assertEquals(m, newMyString);
+		assertEquals(true, m.equals(newMyString));
     }
 
     @Test
@@ -295,7 +294,44 @@ public class MyStringTest {
     }
 
     @Test
-    public void test() {
-
+    public void testEqualsValid() {
+    	MyString m = new MyString(new char [] {'a', 'b', 'c', 'd', 'e'});
+    	MyString n = new MyString(new char [] {'a', 'b', 'c', 'd', 'e'});
+    	assertEquals(true,m.equals(n));
+    }
+    
+    @Test
+    public void testEqualsInvalidMatch() {
+    	MyString m = new MyString(new char [] {'a', 'b', 'c', 'd', 'e'});
+    	MyString n = new MyString(new char [] {'z', 'b', 'c', 'd', 'e'});
+    	assertNotEquals(true,m.equals(n));
+    }
+    
+    @Test
+    public void testEqualsInvalidLength() {
+    	MyString m = new MyString(new char [] {'a', 'b', 'c', 'd', 'e'});
+    	MyString n = new MyString(new char [] {'a', 'b', 'c'});
+    	assertNotEquals(true,m.equals(n));
+    }
+    
+    @Test
+    public void testEqualsIgnoreCaseValid() {
+    	MyString m = new MyString(new char [] {'a', 'b', 'c', 'd', 'e'});
+    	MyString n = new MyString(new char [] {'A', 'b', 'C', 'd', 'e'});
+    	assertEquals(true,m.equalsIgnoreCase(n));
+    }
+    
+    @Test
+    public void testEqualsIgnoreCaseInvalidMatch() {
+    	MyString m = new MyString(new char [] {'a', 'b', 'c', 'd', 'e'});
+    	MyString n = new MyString(new char [] {'Z', 'V', 'B', 'd', 'e'});
+    	assertNotEquals(true,m.equalsIgnoreCase(n));
+    }
+    
+    @Test
+    public void testEqualsIgnoreCaseInvalidLength() {
+    	MyString m = new MyString(new char [] {'a', 'b', 'c', 'd', 'e'});
+    	MyString n = new MyString(new char [] {'a', 'b', 'c'});
+    	assertNotEquals(true,m.equalsIgnoreCase(n));
     }
 }

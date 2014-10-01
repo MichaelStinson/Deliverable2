@@ -16,7 +16,7 @@ public class MyStringTest {
     @Test
     public void testCharAtNotValid() {
         MyString m = new MyString(new char [] {'a', 'b', 'c', 'd', 'e'});
-        assertEquals(false, 'b' == m.charAt(2));
+        assertEquals('b', m.charAt(2));
     }
 
     @Test

@@ -1,6 +1,7 @@
 import static org.junit.Assert.*;
 
 import org.junit.Test;
+import org.mockito.Mockito;
 
 
 public class MyStringTest {
@@ -333,5 +334,54 @@ public class MyStringTest {
     	MyString m = new MyString(new char [] {'a', 'b', 'c', 'd', 'e'});
     	MyString n = new MyString(new char [] {'a', 'b', 'c'});
     	assertNotEquals(true,m.equalsIgnoreCase(n));
+    }
+    
+    @Test
+    public void testLengthCalled() {
+    	MyString n = new MyString(new char [] {'a', 'b', 'c'});
+    	
+    	MyString mockMyString = Mockito.mock(MyString.class);
+    	Mockito.when(mockMyString.length()).thenReturn(3);
+    	Mockito.when(mockMyString.toCharArray()).thenReturn(new char [] {'a', 'b', 'c'});
+    	
+    	n.equals(mockMyString);
+    	
+    	Mockito.verify(mockMyString).length();
+    	
+    }
+    
+    @Test
+    public void testToCharArrayCalled() {
+    	MyString n = new MyString(new char [] {'a', 'b', 'c'});
+    	
+    	MyString mockMyString = Mockito.mock(MyString.class);
+    	Mockito.when(mockMyString.length()).thenReturn(3);
+    	Mockito.when(mockMyString.toCharArray()).thenReturn(new char [] {'a', 'b', 'c'});
+    	
+    	n.equals(mockMyString);
+
+    	Mockito.verify(mockMyString).toCharArray();
+    }
+    
+    @Test
+    public void testEqualsMethodWhenEquals() {
+    	MyString n = new MyString(new char [] {'a', 'b', 'c'});
+    	
+    	MyString mockMyString = Mockito.mock(MyString.class);
+    	Mockito.when(mockMyString.length()).thenReturn(3);
+    	Mockito.when(mockMyString.toCharArray()).thenReturn(new char [] {'a', 'b', 'c'});
+    	
+    	assertTrue(n.equals(mockMyString));
+    }
+    
+    @Test
+    public void testEqualsMethodWhenNotEquals() {
+    	MyString n = new MyString(new char [] {'a', 'b', 'c'});
+    	
+    	MyString mockMyString = Mockito.mock(MyString.class);
+    	Mockito.when(mockMyString.length()).thenReturn(3);
+    	Mockito.when(mockMyString.toCharArray()).thenReturn(new char [] {'a', 'b', 'Q'});
+    	
+    	assertFalse(n.equals(mockMyString));
     }
 }

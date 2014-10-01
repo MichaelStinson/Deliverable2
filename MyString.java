@@ -63,16 +63,6 @@ public class MyString {
         return -1;
     }
 
-    /*public MyString append (char [] c) {
-      char [] ret = new char [chars.length+c.length];
-
-    }
-
-    public MyString append (MyString m) {
-
-
-    }*/
-
     public char [] toCharArray () {
         return chars;
     }

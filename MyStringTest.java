@@ -61,9 +61,12 @@ public class MyStringTest {
         assertNotEquals(true, m.containsCharIgnoreCase('F'));
     }
 
+    //fails
     @Test
     public void testCopy() {
-
+    	MyString m = new MyString(new char [] {'a', 'b', 'c', 'd', 'e'});
+		MyString newMyString = m.copy();
+		assertEquals(m, newMyString);
     }
 
     @Test
@@ -215,52 +218,72 @@ public class MyStringTest {
 
     @Test
     public void testAccessToUppercaseMyString() {
-    	
+    	MyString m = new MyString(new char [] {'a', 'b', 'c', 'd', 'e'});
+    	MyString testString = m.accessToUppercaseMyString();
+    	assertEquals("ABCDE", testString.toString());
     }
 
     @Test
     public void testAccessToUppercaseMyStringAlreadyUppercase() {
-
+    	MyString m = new MyString(new char [] {'A', 'B', 'C', 'D', 'E'});
+    	MyString testString = m.accessToUppercaseMyString();
+    	assertEquals("ABCDE", testString.toString());
     }
 
     @Test
     public void testAccessToLowercaseMyString() {
-
+    	MyString m = new MyString(new char [] {'A', 'B', 'C', 'D', 'E'});
+    	MyString testString = m.accessToLowercaseMyString();
+    	assertEquals("abcde", testString.toString());
     }
 
     @Test
     public void testAccessToLowercaseMyStringAlreadyUppercase() {
-
+    	MyString m = new MyString(new char [] {'a', 'b', 'c', 'd', 'e'});
+    	MyString testString = m.accessToLowercaseMyString();
+    	assertEquals("abcde", testString.toString());
     }
 
     @Test
     public void testMutateToUppercaseMyString() {
-
+    	MyString m = new MyString(new char [] {'a', 'b', 'c', 'd', 'e'});
+    	m.mutateToUppercaseMyString();
+    	assertEquals("ABCDE", m.toString());
     }
 
     @Test
     public void testMutateToLowercaseMyString() {
-
+    	MyString m = new MyString(new char [] {'A', 'B', 'C', 'D', 'E'});
+    	m.mutateToLowercaseMyString();
+    	assertEquals("abcde", m.toString());
     }
 
     @Test
     public void testAccessToUppercaseChars() {
-
+    	MyString m = new MyString(new char [] {'a', 'b', 'c', 'd', 'e'});
+    	char [] testChars = m.accessToUppercaseChars();
+    	assertArrayEquals(new char [] {'A', 'B', 'C', 'D', 'E'}, testChars);
     }
 
     @Test
     public void testAccessToLowercaseChars() {
-
+    	MyString m = new MyString(new char [] {'A', 'B', 'C', 'D', 'E'});
+    	char [] testChars = m.accessToLowercaseChars();
+    	assertArrayEquals(new char [] {'a', 'b', 'c', 'd', 'e'}, testChars);    	
     }
 
     @Test
     public void testMutateToUppercaseChars() {
-
+    	MyString m = new MyString(new char [] {'a', 'b', 'c', 'd', 'e'});
+    	m.mutateToUppercaseChars();
+    	assertArrayEquals(new char [] {'A', 'B', 'C', 'D', 'E'}, m.toCharArray());
     }
 
     @Test
     public void testMutateToLowercaseChars() {
-
+    	MyString m = new MyString(new char [] {'A', 'B', 'C', 'D', 'E'});
+    	m.mutateToLowercaseChars();
+    	assertArrayEquals(new char [] {'a', 'b', 'c', 'd', 'e'}, m.toCharArray());
     }
 
     @Test

@@ -16,7 +16,7 @@ public class MyStringTest {
     @Test
     public void testCharAtNotValid() {
         MyString m = new MyString(new char [] {'a', 'b', 'c', 'd', 'e'});
-        assertEquals('b', m.charAt(2));
+        assertNotEquals('b', m.charAt(2));
     }
 
     @Test
@@ -58,7 +58,7 @@ public class MyStringTest {
     @Test
     public void testContainsCharIgnoreCaseNotFound() {
         MyString m = new MyString(new char [] {'a', 'b', 'c', 'd', 'e'});
-        assertEquals(false, m.containsCharIgnoreCase('F'));
+        assertNotEquals(true, m.containsCharIgnoreCase('F'));
     }
 
     @Test
@@ -82,6 +82,7 @@ public class MyStringTest {
     public void testEndsWithCharFound() {
         MyString m = new MyString(new char [] {'a', 'b', 'c', 'd', 'e'});
         assertEquals(true, m.endsWithChar('e'));
+        assertNotEquals(true, m.endsWithChar('a'));
     }
 
     @Test
@@ -98,75 +99,124 @@ public class MyStringTest {
 
     @Test
     public void testFirstIndexOfNotFound() {
-        MyString m = new MyString(new char [] {'a', 'b', 'c', 'd', 'e'});
+    	char[] initialArray = new char [] {'I', ' ', 'L', 'O', 'V', 'E', ' ', 'T', 'E', 'S', 'T', 'I', 'N', 'G', '!'};
+    	MyString m = new MyString(initialArray);
+    	
         assertEquals(-1, m.firstIndexOf('z'));
     }
 
     @Test
     public void testLastIndexOfFound() {
-        MyString m = new MyString(new char [] {'a', 'b', 'c', 'd', 'a'});
-        assertEquals(4, m.lastIndexOf('a'));
+    	char[] initialArray = new char [] {'I', ' ', 'L', 'O', 'V', 'E', ' ', 'T', 'E', 'S', 'T', 'I', 'N', 'G', '!'};
+    	MyString m = new MyString(initialArray);
+    	
+        assertEquals(8, m.lastIndexOf('E'));
     }
 
     @Test
     public void testLastIndexOfNotFound() {
-        MyString m = new MyString(new char [] {'a', 'b', 'c', 'd', 'a'});
+    	char[] initialArray = new char [] {'I', ' ', 'L', 'O', 'V', 'E', ' ', 'T', 'E', 'S', 'T', 'I', 'N', 'G', '!'};
+    	MyString m = new MyString(initialArray);
+    	
         assertEquals(-1, m.lastIndexOf('z'));
     }
 
     @Test
     public void testIndexOfFromFound() {
-
+    	char[] initialArray = new char [] {'I', ' ', 'L', 'O', 'V', 'E', ' ', 'T', 'E', 'S', 'T', 'I', 'N', 'G', '!'};
+    	MyString m = new MyString(initialArray);
+    	
+    	assertEquals(8, m.indexOfFrom('E', 6));
+    	assertEquals(5, m.indexOfFrom('E', 0));
     }
 
     @Test
     public void testIndexOfFromNotFound() {
-
+    	char[] initialArray = new char [] {'I', ' ', 'L', 'O', 'V', 'E', ' ', 'T', 'E', 'S', 'T', 'I', 'N', 'G', '!'};
+    	MyString m = new MyString(initialArray);
+    	
+    	assertEquals(-1, m.indexOfFrom('q', 0));
     }
 
     @Test
     public void testToCharArray() {
-
+    	char[] initialArray = new char [] {'I', ' ', 'L', 'O', 'V', 'E', ' ', 'T', 'E', 'S', 'T', 'I', 'N', 'G', '!'};
+    	MyString m = new MyString(initialArray);
+    	
+    	char[] returnedArray = m.toCharArray();
+    	assertEquals(initialArray, returnedArray);
     }
 
     @Test
     public void testLength() {
-
+    	char[] initialArray = new char [] {'I', ' ', 'L', 'O', 'V', 'E', ' ', 'T', 'E', 'S', 'T', 'I', 'N', 'G', '!'};
+    	MyString m = new MyString(initialArray);
+    	
+    	assertEquals(15, m.length());
     }
 
     @Test
     public void testReplaceFirstInstanceCharFound() {
-
+    	char[] initialArray = new char [] {'I', ' ', 'L', 'O', 'V', 'E', ' ', 'T', 'E', 'S', 'T', 'I', 'N', 'G', '!'};
+    	MyString m = new MyString(initialArray);
+    	m.replaceFirstInstance('E', 'Q');
+    	
+    	assertEquals(m.charAt(5), 'Q');
+    	assertNotEquals(m.charAt(8), 'Q');
     }
 
     @Test
     public void testReplaceFirstInstanceCharNotFound() {
-
+    	char[] initialArray = new char [] {'I', ' ', 'L', 'O', 'V', 'E', ' ', 'T', 'E', 'S', 'T', 'I', 'N', 'G', '!'};
+    	MyString m = new MyString(initialArray);
+    	m.replaceFirstInstance('Q', 'Z');
+    	
+    	assertEquals(-1, m.indexOfFrom('Z', 0));
     }
 
     @Test
     public void testReplaceLastInstanceCharFound() {
-
+    	char[] initialArray = new char [] {'I', ' ', 'L', 'O', 'V', 'E', ' ', 'T', 'E', 'S', 'T', 'I', 'N', 'G', '!'};
+    	MyString m = new MyString(initialArray);
+    	m.replaceLastInstance('E', 'Q');
+    	
+    	assertNotEquals(m.charAt(5), 'Q');
+    	assertEquals(m.charAt(8), 'Q');
     }
 
     @Test
     public void testReplaceLastInstanceCharNotFound() {
-
+    	char[] initialArray = new char [] {'I', ' ', 'L', 'O', 'V', 'E', ' ', 'T', 'E', 'S', 'T', 'I', 'N', 'G', '!'};
+    	MyString m = new MyString(initialArray);
+    	m.replaceLastInstance('Q', 'Z');
+    	
+    	assertEquals(-1, m.indexOfFrom('Z', 0));
     }
 
     @Test
     public void testReplaceAllCharFound() {
-
+    	char[] initialArray = new char [] {'I', ' ', 'L', 'O', 'V', 'E', ' ', 'T', 'E', 'S', 'T', 'I', 'N', 'G', '!'};
+    	MyString m = new MyString(initialArray);
+    	m.replaceAll('E', 'Q');
+    	
+    	assertEquals(m.charAt(5), 'Q');
+    	assertEquals(m.charAt(8), 'Q');
+    	assertEquals(-1, m.indexOfFrom('E', 0));
     }
 
     @Test
     public void testReplaceAllCharNotFound() {
-
+    	char[] initialArray = new char [] {'I', ' ', 'L', 'O', 'V', 'E', ' ', 'T', 'E', 'S', 'T', 'I', 'N', 'G', '!'};
+    	MyString m = new MyString(initialArray);
+    	m.replaceAll('Q', 'Z');
+    	
+    	assertEquals(-1, m.indexOfFrom('Q', 0));
+    	assertEquals(-1, m.indexOfFrom('Z', 0));
     }
 
     @Test
     public void testAccessToUppercaseMyString() {
-
+    	
     }
 
     @Test
@@ -216,7 +266,10 @@ public class MyStringTest {
 
     @Test
     public void testToString() {
-
+    	char[] initialArray = new char [] {'I', ' ', 'L', 'O', 'V', 'E', ' ', 'T', 'E', 'S', 'T', 'I', 'N', 'G', '!'};
+    	MyString m = new MyString(initialArray);
+    	
+    	assertEquals("I LOVE TESTING!", m.toString());
     }
 
     @Test

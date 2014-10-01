@@ -82,7 +82,6 @@ public class MyStringTest {
     public void testEndsWithCharFound() {
         MyString m = new MyString(new char [] {'a', 'b', 'c', 'd', 'e'});
         assertEquals(true, m.endsWithChar('e'));
-        assertNotEquals(true, m.endsWithChar('a'));
     }
 
     @Test

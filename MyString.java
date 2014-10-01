@@ -21,7 +21,7 @@ public class MyString {
     }
 
     public boolean containsCharIgnoreCase (char c) {
-        for (Character i : chars) {
+    	for (char i : chars) {
             if (Character.toLowerCase(i) == Character.toLowerCase(c))
                 return true;
         }

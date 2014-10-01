@@ -58,7 +58,7 @@ public class MyStringTest {
     @Test
     public void testContainsCharIgnoreCaseNotFound() {
         MyString m = new MyString(new char [] {'a', 'b', 'c', 'd', 'e'});
-        assertNotEquals(true, m.containsChar('F'));
+        assertNotEquals(true, m.containsCharIgnoreCase('F'));
     }
 
     @Test
@@ -67,7 +67,7 @@ public class MyStringTest {
     }
 
     @Test
-    public void testStarsWithCharFound() {
+    public void testStartsWithCharFound() {
         MyString m = new MyString(new char [] {'a', 'b', 'c', 'd', 'e'});
         assertEquals(true, m.startsWithChar('a'));
     }
@@ -81,7 +81,7 @@ public class MyStringTest {
     @Test
     public void testEndsWithCharFound() {
         MyString m = new MyString(new char [] {'a', 'b', 'c', 'd', 'e'});
-        assertNotEquals(true, m.endsWithChar('a'));
+        assertEquals(true, m.endsWithChar('e'));
     }
 
     @Test

@@ -9,42 +9,56 @@ public class MyStringTest {
 	
 	@Test
 	public void testCharAtValid() {
-		
+		MyString m = new MyString(new char [] {'a', 'b', 'c', 'd', 'e'});
+		assertEquals('c', m.charAt(2));
 	}
 
 	@Test
+	public void testCharAtNotValid() {
+		MyString m = new MyString(new char [] {'a', 'b', 'c', 'd', 'e'});
+		assertEquals('b', m.charAt(2));
+	}
+	
+	@Test
 	public void testCharAtOutOfBoundsPositive() {
-		
+		MyString m = new MyString(new char [] {'a', 'b', 'c', 'd', 'e'});
+		assertEquals(' ', m.charAt(12));
 	}
 	
 	@Test
 	public void testCharAtOutOfBoundsNegative() {
-		
+		MyString m = new MyString(new char [] {'a', 'b', 'c', 'd', 'e'});
+		assertEquals(' ', m.charAt(-1));
 	}
 
 	@Test
 	public void testCharAtWhitespace() {
-		
+		MyString m = new MyString(new char [] {'a', 'b', ' ', 'd', 'e'});
+		assertEquals(' ', m.charAt(2));
 	}
 	
 	@Test
 	public void testContainsCharFound() {
-		
+		MyString m = new MyString(new char [] {'a', 'b', 'c', 'd', 'e'});
+		assertEquals(true, m.containsChar('c'));
 	}
 	
 	@Test
 	public void testContainsCharNotFound() {
-		
+		MyString m = new MyString(new char [] {'a', 'b', 'c', 'd', 'e'});
+		assertEquals(false, m.containsChar('f'));
 	}
 	
 	@Test
 	public void testContainsCharIgnoreCaseFound() {
-		
+		MyString m = new MyString(new char [] {'a', 'b', 'c', 'd', 'e'});
+		assertEquals(true, m.containsChar('C'));
 	}
 	
 	@Test
 	public void testContainsCharIgnoreCaseNotFound() {
-		
+		MyString m = new MyString(new char [] {'a', 'b', 'c', 'd', 'e'});
+		assertEquals(true, m.containsChar('F'));
 	}
 	
 	@Test

@@ -162,6 +162,40 @@ public class MyStringTest {
 		
 	}
 	
+	@Test
+	public void testMutateToUppercaseMyString() {
+		
+	}
+	
+	@Test
+	public void testMutateToLowercaseMyString() {
+		
+	}
+	
+	@Test
+	public void testAccessToUppercaseChars() {
+		
+	}
+	
+	@Test
+	public void testAccessToLowercaseChars() {
+		
+	}
+	
+	@Test
+	public void testMutateToUppercaseChars() {
+		
+	}
+	
+	@Test
+	public void testMutateToLowercaseChars() {
+		
+	}
+	
+	@Test
+	public void testToString() {
+		
+	}
 	
 	@Test
 	public void test() {

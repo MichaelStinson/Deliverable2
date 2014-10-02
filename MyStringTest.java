@@ -144,6 +144,9 @@ public class MyStringTest {
 
     @Test
     public void testFirstIndexOfNotFound() {
+        //
+        // This unit test verifies the functionality of firstIndexOf() when the input is not present
+    	
         char[] initialArray = new char [] {'I', ' ', 'L', 'O', 'V', 'E', ' ', 'T', 'E', 'S', 'T', 'I', 'N', 'G', '!'};
         MyString m = new MyString(initialArray);
         assertEquals(-1, m.firstIndexOf('z'));
@@ -151,6 +154,9 @@ public class MyStringTest {
 
     @Test
     public void testLastIndexOfFound() {
+        //
+        // This unit test verifies the functionality of lastIndexOf() when the input is present
+    	
         char[] initialArray = new char [] {'I', ' ', 'L', 'O', 'V', 'E', ' ', 'T', 'E', 'S', 'T', 'I', 'N', 'G', '!'};
         MyString m = new MyString(initialArray);
         assertEquals(8, m.lastIndexOf('E'));
@@ -158,6 +164,9 @@ public class MyStringTest {
 
     @Test
     public void testLastIndexOfNotFound() {
+        //
+        // This unit test verifies the functionality of lastIndexOf() when the input is not present
+    	
         char[] initialArray = new char [] {'I', ' ', 'L', 'O', 'V', 'E', ' ', 'T', 'E', 'S', 'T', 'I', 'N', 'G', '!'};
         MyString m = new MyString(initialArray);
         assertEquals(-1, m.lastIndexOf('z'));
@@ -165,6 +174,9 @@ public class MyStringTest {
 
     @Test
     public void testIndexOfFromFound() {
+        //
+        // This unit test verifies the functionality of indexOfFrom() when the input is present
+    	
         char[] initialArray = new char [] {'I', ' ', 'L', 'O', 'V', 'E', ' ', 'T', 'E', 'S', 'T', 'I', 'N', 'G', '!'};
         MyString m = new MyString(initialArray);
 
@@ -174,6 +186,9 @@ public class MyStringTest {
 
     @Test
     public void testIndexOfFromNotFound() {
+        //
+        // This unit test verifies the functionality of indexOfFrom() when the input is not present
+
         char[] initialArray = new char [] {'I', ' ', 'L', 'O', 'V', 'E', ' ', 'T', 'E', 'S', 'T', 'I', 'N', 'G', '!'};
         MyString m = new MyString(initialArray);
         assertEquals(-1, m.indexOfFrom('q', 0));
@@ -181,6 +196,9 @@ public class MyStringTest {
 
     @Test
     public void testToCharArray() {
+        //
+        // This unit test verifies the functionality of toCharArray() when the input is present
+
         char[] initialArray = new char [] {'I', ' ', 'L', 'O', 'V', 'E', ' ', 'T', 'E', 'S', 'T', 'I', 'N', 'G', '!'};
         MyString m = new MyString(initialArray);
 
@@ -190,6 +208,9 @@ public class MyStringTest {
 
     @Test
     public void testLength() {
+        //
+        // This unit test verifies the functionality of length()
+
         char[] initialArray = new char [] {'I', ' ', 'L', 'O', 'V', 'E', ' ', 'T', 'E', 'S', 'T', 'I', 'N', 'G', '!'};
         MyString m = new MyString(initialArray);
 
@@ -198,6 +219,9 @@ public class MyStringTest {
 
     @Test
     public void testReplaceFirstInstanceCharFound() {
+        //
+        // This unit test verifies the functionality of replaceFirstInstance() when the input is present
+
         char[] initialArray = new char [] {'I', ' ', 'L', 'O', 'V', 'E', ' ', 'T', 'E', 'S', 'T', 'I', 'N', 'G', '!'};
         MyString m = new MyString(initialArray);
         m.replaceFirstInstance('E', 'Q');
@@ -208,6 +232,9 @@ public class MyStringTest {
 
     @Test
     public void testReplaceFirstInstanceCharNotFound() {
+        //
+        // This unit test verifies the functionality of replaceFirstInstance() when the input is not present
+    	
         char[] initialArray = new char [] {'I', ' ', 'L', 'O', 'V', 'E', ' ', 'T', 'E', 'S', 'T', 'I', 'N', 'G', '!'};
         MyString m = new MyString(initialArray);
         m.replaceFirstInstance('Q', 'Z');
@@ -217,6 +244,9 @@ public class MyStringTest {
 
     @Test
     public void testReplaceLastInstanceCharFound() {
+        //
+        // This unit test verifies the functionality of replaceLastInstance() when the input is present
+    	
         char[] initialArray = new char [] {'I', ' ', 'L', 'O', 'V', 'E', ' ', 'T', 'E', 'S', 'T', 'I', 'N', 'G', '!'};
         MyString m = new MyString(initialArray);
         m.replaceLastInstance('E', 'Q');
@@ -227,6 +257,9 @@ public class MyStringTest {
 
     @Test
     public void testReplaceLastInstanceCharNotFound() {
+        //
+        // This unit test verifies the functionality of replaceLastInstance() when the input is not present
+    	
         char[] initialArray = new char [] {'I', ' ', 'L', 'O', 'V', 'E', ' ', 'T', 'E', 'S', 'T', 'I', 'N', 'G', '!'};
         MyString m = new MyString(initialArray);
         m.replaceLastInstance('Q', 'Z');
@@ -236,6 +269,9 @@ public class MyStringTest {
 
     @Test
     public void testReplaceAllCharFound() {
+        //
+        // This unit test verifies the functionality of replaceAll() when the input is present
+    	
         char[] initialArray = new char [] {'I', ' ', 'L', 'O', 'V', 'E', ' ', 'T', 'E', 'S', 'T', 'I', 'N', 'G', '!'};
         MyString m = new MyString(initialArray);
         m.replaceAll('E', 'Q');
@@ -247,6 +283,9 @@ public class MyStringTest {
 
     @Test
     public void testReplaceAllCharNotFound() {
+        //
+        // This unit test verifies the functionality of replaceAll() when the input is not present
+    	
         char[] initialArray = new char [] {'I', ' ', 'L', 'O', 'V', 'E', ' ', 'T', 'E', 'S', 'T', 'I', 'N', 'G', '!'};
         MyString m = new MyString(initialArray);
         m.replaceAll('Q', 'Z');
@@ -257,6 +296,9 @@ public class MyStringTest {
 
     @Test
     public void testAccessToUppercaseMyString() {
+        //
+        // This unit test verifies the functionality of accessToUppercaseMyString() when the input is lower case
+    	
         MyString m = new MyString(new char [] {'a', 'b', 'c', 'd', 'e'});
         MyString testString = m.accessToUppercaseMyString();
         assertEquals("ABCDE", testString.toString());
@@ -264,20 +306,28 @@ public class MyStringTest {
 
     @Test
     public void testAccessToUppercaseMyStringAlreadyUppercase() {
+        //
+        // This unit test verifies the functionality of accessToUppercaseMyString() when the input is already upper case
         MyString m = new MyString(new char [] {'A', 'B', 'C', 'D', 'E'});
         MyString testString = m.accessToUppercaseMyString();
         assertEquals("ABCDE", testString.toString());
     }
 
     @Test
-    public void testAccessToLowercaseMyString() {
+    public void testAccessToLowercaseMyStringAlreadyUppercase() {
+        //
+        // This unit test verifies the functionality of accessToLowercaseMyString() when the input is already upper case
+    	
         MyString m = new MyString(new char [] {'A', 'B', 'C', 'D', 'E'});
         MyString testString = m.accessToLowercaseMyString();
         assertEquals("abcde", testString.toString());
     }
 
     @Test
-    public void testAccessToLowercaseMyStringAlreadyUppercase() {
+    public void testAccessToLowercaseMyString() {
+        //
+        // This unit test verifies the functionality of accessToLowercaseMyString() when the input is lower case
+
         MyString m = new MyString(new char [] {'a', 'b', 'c', 'd', 'e'});
         MyString testString = m.accessToLowercaseMyString();
         assertEquals("abcde", testString.toString());
@@ -285,6 +335,8 @@ public class MyStringTest {
 
     @Test
     public void testMutateToUppercaseMyString() {
+        //
+        // This unit test verifies the functionality of mutateToLowercaseMyString()
         MyString m = new MyString(new char [] {'a', 'b', 'c', 'd', 'e'});
         m.mutateToUppercaseMyString();
         assertEquals("ABCDE", m.toString());
@@ -292,6 +344,8 @@ public class MyStringTest {
 
     @Test
     public void testMutateToLowercaseMyString() {
+        //
+        // This unit test verifies the functionality of mutateToLowercaseMyString()
         MyString m = new MyString(new char [] {'A', 'B', 'C', 'D', 'E'});
         m.mutateToLowercaseMyString();
         assertEquals("abcde", m.toString());
@@ -299,6 +353,8 @@ public class MyStringTest {
 
     @Test
     public void testAccessToUppercaseChars() {
+    	//
+        // This unit test verifies the functionality of accessToUppercaseChars()
         MyString m = new MyString(new char [] {'a', 'b', 'c', 'd', 'e'});
         char [] testChars = m.accessToUppercaseChars();
         assertArrayEquals(new char [] {'A', 'B', 'C', 'D', 'E'}, testChars);
@@ -306,6 +362,8 @@ public class MyStringTest {
 
     @Test
     public void testAccessToLowercaseChars() {
+    	//
+        // This unit test verifies the functionality of accessToLowercaseChars()
         MyString m = new MyString(new char [] {'A', 'B', 'C', 'D', 'E'});
         char [] testChars = m.accessToLowercaseChars();
         assertArrayEquals(new char [] {'a', 'b', 'c', 'd', 'e'}, testChars);    	
@@ -313,6 +371,8 @@ public class MyStringTest {
 
     @Test
     public void testMutateToUppercaseChars() {
+    	//
+        // This unit test verifies the functionality of mutateToUppercaseChars()
         MyString m = new MyString(new char [] {'a', 'b', 'c', 'd', 'e'});
         m.mutateToUppercaseChars();
         assertArrayEquals(new char [] {'A', 'B', 'C', 'D', 'E'}, m.toCharArray());
@@ -320,6 +380,8 @@ public class MyStringTest {
 
     @Test
     public void testMutateToLowercaseChars() {
+    	//
+        // This unit test verifies the functionality of mutateToLowercaseChars()
         MyString m = new MyString(new char [] {'A', 'B', 'C', 'D', 'E'});
         m.mutateToLowercaseChars();
         assertArrayEquals(new char [] {'a', 'b', 'c', 'd', 'e'}, m.toCharArray());
@@ -327,6 +389,8 @@ public class MyStringTest {
 
     @Test
     public void testToString() {
+    	//
+        // This unit test verifies the functionality of toString()
         char[] initialArray = new char [] {'I', ' ', 'L', 'O', 'V', 'E', ' ', 'T', 'E', 'S', 'T', 'I', 'N', 'G', '!'};
         MyString m = new MyString(initialArray);
 
@@ -335,6 +399,9 @@ public class MyStringTest {
 
     @Test
     public void testEqualsValid() {
+    	//
+        // This unit test verifies the functionality of equals() when equal
+    	
         MyString m = new MyString(new char [] {'a', 'b', 'c', 'd', 'e'});
         MyString n = new MyString(new char [] {'a', 'b', 'c', 'd', 'e'});
         assertEquals(true,m.equals(n));
@@ -342,6 +409,8 @@ public class MyStringTest {
 
     @Test
     public void testEqualsInvalidMatch() {
+    	//
+        // This unit test verifies the functionality of equals() when not equal
         MyString m = new MyString(new char [] {'a', 'b', 'c', 'd', 'e'});
         MyString n = new MyString(new char [] {'z', 'b', 'c', 'd', 'e'});
         assertNotEquals(true,m.equals(n));
@@ -349,6 +418,8 @@ public class MyStringTest {
 
     @Test
     public void testEqualsInvalidLength() {
+    	//
+        // This unit test verifies the functionality of equals() when different lengths
         MyString m = new MyString(new char [] {'a', 'b', 'c', 'd', 'e'});
         MyString n = new MyString(new char [] {'a', 'b', 'c'});
         assertNotEquals(true,m.equals(n));
@@ -356,6 +427,8 @@ public class MyStringTest {
 
     @Test
     public void testEqualsIgnoreCaseValid() {
+    	//
+        // This unit test verifies the functionality of equalsIgnoreCase() when there are different cases
         MyString m = new MyString(new char [] {'a', 'b', 'c', 'd', 'e'});
         MyString n = new MyString(new char [] {'A', 'b', 'C', 'd', 'e'});
         assertEquals(true,m.equalsIgnoreCase(n));
@@ -363,6 +436,8 @@ public class MyStringTest {
 
     @Test
     public void testEqualsIgnoreCaseInvalidMatch() {
+    	//
+        // This unit test verifies the functionality of equalsIgnoreCase() when there are completely different elements
         MyString m = new MyString(new char [] {'a', 'b', 'c', 'd', 'e'});
         MyString n = new MyString(new char [] {'Z', 'V', 'B', 'd', 'e'});
         assertNotEquals(true,m.equalsIgnoreCase(n));
@@ -370,6 +445,8 @@ public class MyStringTest {
 
     @Test
     public void testEqualsIgnoreCaseInvalidLength() {
+    	//
+        // This unit test verifies the functionality of equalsIgnoreCase() when there are completely different lengths
         MyString m = new MyString(new char [] {'a', 'b', 'c', 'd', 'e'});
         MyString n = new MyString(new char [] {'a', 'b', 'c'});
         assertNotEquals(true,m.equalsIgnoreCase(n));
@@ -377,6 +454,8 @@ public class MyStringTest {
 
     @Test
     public void testLengthCalled() {
+    	//
+        // This unit test verifies that the length method is called in .equals when inputs are the same (using mocking and stubbing)
         MyString n = new MyString(new char [] {'a', 'b', 'c'});
 
         MyString mockMyString = Mockito.mock(MyString.class);
@@ -391,6 +470,8 @@ public class MyStringTest {
 
     @Test
     public void testToCharArrayCalled() {
+    	//
+        // This unit test verifies that the toCharArray method is called in .equals when things are of the same length (using mocking and stubbing)
         MyString n = new MyString(new char [] {'a', 'b', 'c'});
 
         MyString mockMyString = Mockito.mock(MyString.class);
@@ -404,6 +485,8 @@ public class MyStringTest {
 
     @Test
     public void testEqualsMethodWhenEquals() {
+    	//
+        // This unit test verifies that the equals method works properly when inputs are equal (using mocking and stubbing)
         MyString n = new MyString(new char [] {'a', 'b', 'c'});
 
         MyString mockMyString = Mockito.mock(MyString.class);
@@ -415,6 +498,8 @@ public class MyStringTest {
 
     @Test
     public void testEqualsMethodWhenNotEquals() {
+    	//
+        // This unit test verifies that the equals method works properly when inputs are not equal (using mocking and stubbing)
         MyString n = new MyString(new char [] {'a', 'b', 'c'});
 
         MyString mockMyString = Mockito.mock(MyString.class);

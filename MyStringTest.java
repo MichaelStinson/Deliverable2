@@ -10,7 +10,6 @@ public class MyStringTest {
 
     @Test
     public void testCharAtValid() {
-        //
         // This unit test verifies the functionality of MyString.charAt(char c) on valid input
 
         MyString m = new MyString(new char [] {'a', 'b', 'c', 'd', 'e'});
@@ -19,9 +18,7 @@ public class MyStringTest {
 
     @Test
     public void testCharAtNotValid() {
-        //
         // This unit test verifies the functionality of MyString.charAt(char c)
-        // It emulates a failing test (as 'b' is the character at index 3)
 
         MyString m = new MyString(new char [] {'a', 'b', 'c', 'd', 'e'});
         assertNotEquals('b', m.charAt(2));
@@ -29,8 +26,8 @@ public class MyStringTest {
 
     @Test
     public void testCharAtOutOfBoundsPositive() {
-        //
         // This unit test verifies the functionality of MyString.charAt(char c) on invalid input (out of bounds)
+        // Should return ' ' if invalid index is given
 
         MyString m = new MyString(new char [] {'a', 'b', 'c', 'd', 'e'});
         assertEquals(' ', m.charAt(12));
@@ -38,8 +35,8 @@ public class MyStringTest {
 
     @Test
     public void testCharAtOutOfBoundsNegative() {
-        //
         // This unit test verifies the functionality of MyString.charAt(char c) on invalid input (out of bounds)
+        // Should return ' ' if invalid index is given
 
         MyString m = new MyString(new char [] {'a', 'b', 'c', 'd', 'e'});
         assertEquals(' ', m.charAt(-1));
@@ -47,8 +44,8 @@ public class MyStringTest {
 
     @Test
     public void testCharAtWhitespace() {
-        //
         // This unit test verifies the functionality of MyString.charAt(char c) on valid input
+        // Should return ' ' as MyString.charAt(2)
 
         MyString m = new MyString(new char [] {'a', 'b', ' ', 'd', 'e'});
         assertNotEquals(' ', m.charAt(2));
@@ -56,8 +53,8 @@ public class MyStringTest {
 
     @Test
     public void testContainsCharFound() {
-        //
         // This unit test verifies the functionality of MyString.containsChar(char c) on valid input
+        // Looks for 'c' in MyString m, should find it
 
         MyString m = new MyString(new char [] {'a', 'b', 'c', 'd', 'e'});
         assertEquals(true, m.containsChar('c'));
@@ -65,8 +62,8 @@ public class MyStringTest {
 
     @Test
     public void testContainsCharNotFound() {
-        //
         // This unit test verifies the functionality of MyString.containsChar(char c) on valid but not found input
+        // Looks for 'f' in MyString m, should not find it
 
         MyString m = new MyString(new char [] {'a', 'b', 'c', 'd', 'e'});
         assertEquals(false, m.containsChar('f'));
@@ -74,8 +71,8 @@ public class MyStringTest {
 
     @Test
     public void testContainsCharIgnoreCaseFound() {
-        //
         // This unit test verifies the functionality of MyString.containsChar(char c) on valid but not found input (should respect Case)
+        // Looks for 'C' or 'c' in MyString m, should not find 'c'
 
         MyString m = new MyString(new char [] {'a', 'b', 'c', 'd', 'e'});
         assertEquals(true, m.containsCharIgnoreCase('C'));
@@ -83,9 +80,8 @@ public class MyStringTest {
 
     @Test
     public void testContainsCharIgnoreCaseNotFound() {
-        //
         // This unit test verifies the functionality of MyString.containsCharIgnoreCase(char c) on valid and not found input
-        // It emulates a failing test (as neither 'F' nor 'f' is in the new MyString class)
+        // Looks for 'F' or 'f' in MyString m, should not find it
 
         MyString m = new MyString(new char [] {'a', 'b', 'c', 'd', 'e'});
         assertNotEquals(true, m.containsCharIgnoreCase('F'));
@@ -93,8 +89,8 @@ public class MyStringTest {
 
     @Test
     public void testCopy() {
-        //
-        // This unit test verifies the functionality of MyString.charAt(char c)
+        // This unit test verifies the functionality of MyString.copy(char c)
+        // Copies MyString m into MyString newMyString. Checks if they are equal using MyString.Equals(MyString m)
 
         MyString m = new MyString(new char [] {'a', 'b', 'c', 'd', 'e'});
         MyString newMyString = m.copy();
@@ -103,8 +99,8 @@ public class MyStringTest {
 
     @Test
     public void testStartsWithCharFound() {
-        //
-        // This unit test verifies the functionality of MyString.charAt(char c)
+        // This unit test verifies the functionality of MyString.startsWithChar(char c)
+        // Looks for 'a' at the start, and should find it
 
         MyString m = new MyString(new char [] {'a', 'b', 'c', 'd', 'e'});
         assertEquals(true, m.startsWithChar('a'));
@@ -112,8 +108,8 @@ public class MyStringTest {
 
     @Test
     public void testStartsWithCharNotFound() {
-        //
-        // This unit test verifies the functionality of MyString.charAt(char c)
+        // This unit test verifies the functionality of MyString.startsWithChar(char c)
+        // Looks for 'z' at the start, and should not find it
 
         MyString m = new MyString(new char [] {'a', 'b', 'c', 'd', 'e'});
         assertEquals(false, m.startsWithChar('z'));
@@ -121,17 +117,17 @@ public class MyStringTest {
 
     @Test
     public void testEndsWithCharFound() {
-        //
-        // This unit test verifies the functionality of MyString.charAt(char c)
-
+        // This unit test verifies the functionality of MyString.endsWithChart(char c)
+        // Looks for 'e' at the end, and should find it
+        
         MyString m = new MyString(new char [] {'a', 'b', 'c', 'd', 'e'});
         assertEquals(true, m.endsWithChar('e'));
     }
 
     @Test
     public void testEndsWithCharNotFound() {
-        //
-        // This unit test verifies the functionality of MyString.charAt(char c)
+        // This unit test verifies the functionality of MyString.endsWithChar(char c)
+        // Looks for 'z' at the end, and should not find it
 
         MyString m = new MyString(new char [] {'a', 'b', 'c', 'd', 'e'});
         assertEquals(false, m.endsWithChar('z'));
@@ -139,8 +135,8 @@ public class MyStringTest {
 
     @Test
     public void testFirstIndexOfFound() {
-        //
-        // This unit test verifies the functionality of MyString.charAt(char c)
+        // This unit test verifies the functionality of MyString.firstIndexOf(char c)
+        // Looks for the first index of 'a', and should find it to be index=0
 
         MyString m = new MyString(new char [] {'a', 'b', 'c', 'd', 'e'});
         assertEquals(0, m.firstIndexOf('a'));

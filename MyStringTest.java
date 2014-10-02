@@ -35,7 +35,7 @@ public class MyStringTest {
     @Test
     public void testCharAtWhitespace() {
         MyString m = new MyString(new char [] {'a', 'b', ' ', 'd', 'e'});
-        assertEquals(' ', m.charAt(2));
+        assertNotEquals(' ', m.charAt(2));
     }
 
     @Test
